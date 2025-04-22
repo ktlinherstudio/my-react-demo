@@ -56,7 +56,6 @@ body {
     background-color: #ccc;
     color: #333;
     height: 40px;
-
     margin-top: 10px;
     padding: 0 10px;
     border-radius: 5px;
@@ -67,4 +66,17 @@ body {
 
 .todo p {
     margin: 0;
+    cursor: pointer;
 }
+
+
+/* 點擊後整行紅色 + 刪除線 */
+.todo.completed {
+    color: red;
+    text-decoration: line-through;
+  }
+  
+  /* 讓 icon 也變紅 */
+  .todo.completed svg {
+    color: red;
+  }
