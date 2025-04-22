@@ -1,6 +1,12 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background-color: #eee;
-}
+    color: #fff;
+/* }
 #container{
     width: 768px;
     margin: 0 auto;
@@ -11,5 +17,5 @@ h1{
     font-size: 24px;
 }
 .img{
-    width: 100%;
-}
+    width: 100%;*/
+} 
