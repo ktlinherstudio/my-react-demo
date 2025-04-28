@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    span {
-        display: inline-block;
-        padding: 8px 16px;
-        border: 2px solid black;
-        border-radius: 6px;
-        cursor: pointer;
-        margin: 5px;
-        width: 50px;
-    }
-
-    span:hover {
-        color: blue;
-        border-color: blue;
-    }
-
-    .page {
-        display: flex;
-        padding: 100px 100px;
-        width: 200px;
-        height: 200px;
-        border: 2px solid black;
-        border-radius: 6px;
-        cursor: pointer;
-        margin: 5px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .page1 {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .page2 {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .span2{
-        display: flex;
-        justify-content: space-between;
-        width: 410px;
-    }
-
-    .page3 {
-        display: flex;
-        flex-direction: column;
-    }
-</style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <style>
+        /* 按鈕樣式 */
+        span {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid black;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            width: 80px;
+            text-align: center;
+        }
+        span:hover {
+            color: blue;
+            border-color: blue;
+        }
 
+        /* 每頁共通樣式 */
+        .page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 6px;
+            margin: 50px auto;
+            box-sizing: border-box;
+        }
+
+        /* 每個頁面的包裝，讓一開始只有第一頁顯示 */
+        #page1, #page2, #page3 {
+            display: none;
+            text-align: center;
+        }
+        #page1 {
+            display: block; /* 初始顯示第一頁 */
+        }
+
+        /* page2 特別排按鈕左右分散 */
+        .span2 {
+            display: flex;
+            justify-content: space-between;
+            width: 220px;
+            margin: 20px auto 0;
+        }
+    </style>
+</head>
 <body>
+
     <div id="page1">
         <h1 class="page">我是第一頁</h1>
         <span onclick="changeTo2()">下一步</span>
@@ -70,52 +66,31 @@
             <span onclick="changeTo1()">上一步</span>
             <span onclick="changeTo3()">下一步</span>
         </div>
-
     </div>
 
     <div id="page3">
         <h1 class="page">我是第三頁</h1>
         <span onclick="changeTo2()">上一步</span>
+    </div>
 
-        <script>
-            function changeTo2() {
-                let page2 = document.querySelector("#page2");
-                page2.style.display = "block";
+    <script>
+        function changeTo1() {
+            document.querySelector("#page1").style.display = "block";
+            document.querySelector("#page2").style.display = "none";
+            document.querySelector("#page3").style.display = "none";
+        }
 
-                let page3 = document.querySelector("#page3");
-                page3.style.display = "none";
+        function changeTo2() {
+            document.querySelector("#page1").style.display = "none";
+            document.querySelector("#page2").style.display = "block";
+            document.querySelector("#page3").style.display = "none";
+        }
 
-                let page1 = document.querySelector("#page1");
-                page1.style.display = "none";
-
-            }
-
-            function changeTo1() {
-                let page1 = document.querySelector("#page1");
-                page1.style.display = "block";
-
-                let page3 = document.querySelector("#page3");
-                page3.style.display = "none";
-
-                let page2 = document.querySelector("#page2");
-                page2.style.display = "none";
-
-            }
-
-
-            function changeTo3() {
-                let page1 = document.querySelector("#page1");
-                page1.style.display = "none";
-
-                let page3 = document.querySelector("#page3");
-                page3.style.display = "block";
-
-                let page2 = document.querySelector("#page2");
-                page2.style.display = "none";
-
-            }
-
-        </script>
+        function changeTo3() {
+            document.querySelector("#page1").style.display = "none";
+            document.querySelector("#page2").style.display = "none";
+            document.querySelector("#page3").style.display = "block";
+        }
+    </script>
 </body>
-
 </html>

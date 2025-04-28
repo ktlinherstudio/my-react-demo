@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分頁切換＋淡入動畫</title>
+  <style>
+    span {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 2px solid black;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+      width: 80px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    span:hover {
+      color: blue;
+      border-color: blue;
+      transform: scale(1.05);
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: 300px;
+      border: 2px solid black;
+      border-radius: 6px;
+      margin: 50px auto;
+      box-sizing: border-box;
+    }
+
+    .page-wrapper {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      display: none;
+      text-align: center;
+    }
+    .page-wrapper.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .span2 {
+      display: flex;
+      justify-content: space-between;
+      width: 220px;
+      margin: 20px auto 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 第一頁 -->
+  <div id="page1" class="page-wrapper active">
+    <h1 class="page">我是第一頁</h1>
+    <span onclick="changeTo2()">下一步</span>
+  </div>
+
+  <!-- 第二頁 -->
+  <div id="page2" class="page-wrapper">
+    <h1 class="page">我是第二頁</h1>
+    <div class="span2">
+      <span onclick="changeTo1()">上一步</span>
+      <span onclick="changeTo3()">下一步</span>
+    </div>
+  </div>
+
+  <!-- 第三頁 -->
+  <div id="page3" class="page-wrapper">
+    <h1 class="page">我是第三頁</h1>
+    <span onclick="changeTo2()">上一步</span>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page-wrapper').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+
+      // 滑到最上面
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function changeTo1() {
+      showPage('page1');
+    }
+    function changeTo2() {
+      showPage('page2');
+    }
+    function changeTo3() {
+      showPage('page3');
+    }
+  </script>
+
+</body>
+</html>
