@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span{
+            cursor: pointer;
+        }
+        span:hover{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <!-- HTML DOM分頁效果 -->
      <div>
-        <span onclick="changeToAbout()">ABOUT</span>
-        <span onclick="changeToNews()">NEWS</span>
+        <span onclick="changeToAbout();">ABOUT</span>
+        <span onclick="changeToNews();">NEWS</span>
      </div>
      <hr>
 
      <div id="about">大家好,我是xxx</div>
-     <div id="news" style="display: none;">26465645456544565454</div>
+     <div id="news" style="display: none;">
+        26465645456544565454
+    </div>
 
      <script>
+        function changeToAbout(){
+            let about=document.querySelector("#about");
+            about.style.display="block";
+
+            let news=document.querySelector("#news");
+            about.style.display="none";
+        }
         function changeToNews(){
             // 隱藏ABOUT
             let about=document.querySelector("#about");
