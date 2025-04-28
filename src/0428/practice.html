@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    span {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 2px solid black;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 5px;
+        width: 50px;
+    }
+
+    span:hover {
+        color: blue;
+        border-color: blue;
+    }
+
+    .page {
+        display: flex;
+        padding: 100px 100px;
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .span2{
+        display: flex;
+        justify-content: space-between;
+        width: 410px;
+    }
+
+    .page3 {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="page1">
+        <h1 class="page">我是第一頁</h1>
+        <span onclick="changeTo2()">下一步</span>
+    </div>
+
+    <div id="page2">
+        <h1 class="page">我是第二頁</h1>
+        <div class="span2">
+            <span onclick="changeTo1()">上一步</span>
+            <span onclick="changeTo3()">下一步</span>
+        </div>
+
+    </div>
+
+    <div id="page3">
+        <h1 class="page">我是第三頁</h1>
+        <span onclick="changeTo2()">上一步</span>
+
+        <script>
+            function changeTo2() {
+                let page2 = document.querySelector("#page2");
+                page2.style.display = "block";
+
+                let page3 = document.querySelector("#page3");
+                page3.style.display = "none";
+
+                let page1 = document.querySelector("#page1");
+                page1.style.display = "none";
+
+            }
+
+            function changeTo1() {
+                let page1 = document.querySelector("#page1");
+                page1.style.display = "block";
+
+                let page3 = document.querySelector("#page3");
+                page3.style.display = "none";
+
+                let page2 = document.querySelector("#page2");
+                page2.style.display = "none";
+
+            }
+
+
+            function changeTo3() {
+                let page1 = document.querySelector("#page1");
+                page1.style.display = "none";
+
+                let page3 = document.querySelector("#page3");
+                page3.style.display = "block";
+
+                let page2 = document.querySelector("#page2");
+                page2.style.display = "none";
+
+            }
+
+        </script>
+</body>
+
+</html>
