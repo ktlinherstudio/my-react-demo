@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 
+
 function App() {
     //(1)建立useState建立變數，預設空的陣列
     const [citys, setCitys] = useState([]);
@@ -13,6 +14,7 @@ function App() {
             // console.log(1);
             //取得遠端資料
             const data = await axios.get('./api/F-C0032-001.json');
+            //查看是否連上json
             // console.log(data);
 
             //(2)解構各縣市氣象資料
