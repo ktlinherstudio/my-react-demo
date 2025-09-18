@@ -92,7 +92,6 @@ function App() {
                                                     {q.ans}
                                                 </motion.div>
                                             )
-
                                         }
                                     </AnimatePresence>
 
