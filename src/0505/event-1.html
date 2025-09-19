@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <!-- JavaScript綁定事件方法一：html行內綁定 -->
     <input type="button" id="btn1" value="送出1" onclick="send1(event)">
     <script>
         function send1(e) {
@@ -40,22 +40,22 @@
 
         btn3.addEventListener("click", send3);
 
-        btn3.addEventListener("click",(e)=> {
+        btn3.addEventListener("click", (e) => {
             console.log("事件監聽函式1");
             console.log(e);
         })
     </script>
 
     <!-- 當視窗改變大小時,被觸發 -->
-     <script>
-        window.addEventListener("resize",(e)=>{
+    <script>
+        window.addEventListener("resize", (e) => {
             // console.log("視窗已經改變了");
             // console.log(e);
             // 當視窗改變大小時,取得目前寬度與高度
-            console.log('寬高1:'+e.target.innerWidth,innerHeight);
-            console.log('寬高2:'+e.target.innerWidth,e.target.innerHeight);
+            console.log('寬高1:' + e.target.innerWidth, innerHeight);
+            console.log('寬高2:' + e.target.innerWidth, e.target.innerHeight);
         })
-     </script>
+    </script>
 </body>
 
 </html>
