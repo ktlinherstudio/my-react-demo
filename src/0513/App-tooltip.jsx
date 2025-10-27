@@ -17,6 +17,7 @@ export default function App() {
         // 新增html元素 append()
         // 取得子元素 children()
 
+        //當滑鼠碰到超連結時,檢查「has()」是否有ttpshow類別
        $('a:has(.ttpShow)')
             .on('mouseover', function (e) {
                 // 動態增加「append()」一個div區域在body標籤中
@@ -45,6 +46,7 @@ export default function App() {
                     顯示文字
                     <span className='ttpShow'>consectetur內容說明...</span>
                 </a>
+                {/* 自行放上一堆假文字 lorem500 */}
             </p>           
             <p>
                 ToolTip浮動顯示圖片
