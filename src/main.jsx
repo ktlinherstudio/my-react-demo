@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './0526-bootstrap-cart/App.jsx'
+import App from './0602-bootstrap-cart/App.jsx'
 
 // import './index.css'
 // import './style.css'
